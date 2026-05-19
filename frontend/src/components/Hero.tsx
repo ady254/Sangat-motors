@@ -5,6 +5,7 @@ import { motion } from "framer-motion";
 import { Phone, ArrowDown, Star, Users } from "lucide-react";
 import ThreeCar from "./ThreeCar";
 import BookingModal from "./BookingModal";
+import SlideButton from "./SlideButton";
 
 export default function Hero() {
   const [modalOpen, setModalOpen] = useState(false);
@@ -125,12 +126,7 @@ export default function Hero() {
             transition={{ duration: 0.6, delay: 0.5 }}
             className="flex flex-wrap items-center gap-6"
           >
-            <button
-              onClick={() => setModalOpen(true)}
-              className="px-8 py-3.5 bg-orange-600 hover:bg-orange-500 text-white text-xs font-mono font-bold tracking-widest uppercase rounded transition-all duration-300 shadow-[0_4px_25px_rgba(239,68,68,0.25)] hover:scale-105"
-            >
-              BOOK AN APPOINTMENT
-            </button>
+            <SlideButton onSuccess={() => setModalOpen(true)} text="SLIDE TO BOOK SERVICE" />
             <div className="flex flex-col">
               <span className="text-[9px] font-mono tracking-widest text-zinc-500">NEED ASSISTANCE?</span>
               <a
