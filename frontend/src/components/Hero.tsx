@@ -10,6 +10,45 @@ export default function Hero() {
   const [modalOpen, setModalOpen] = useState(false);
   const tickerRef = useRef<HTMLDivElement>(null);
 
+  // Typewriter effect configuration
+  const words = ["TRUST.", "PRECISION.", "QUALITY.", "PASSION."];
+  const [currentWordIndex, setCurrentWordIndex] = useState(0);
+  const [currentText, setCurrentText] = useState("");
+  const [isDeleting, setIsDeleting] = useState(false);
+  const [cursorVisible, setCursorVisible] = useState(true);
+
+  useEffect(() => {
+    let timer: NodeJS.Timeout;
+    const activeWord = words[currentWordIndex];
+    let delay = isDeleting ? 60 : 120;
+
+    if (!isDeleting && currentText === activeWord) {
+      timer = setTimeout(() => {
+        setIsDeleting(true);
+      }, 1800);
+    } else if (isDeleting && currentText === "") {
+      setIsDeleting(false);
+      setCurrentWordIndex((prev) => (prev + 1) % words.length);
+    } else {
+      timer = setTimeout(() => {
+        setCurrentText((prev) =>
+          isDeleting
+            ? activeWord.substring(0, prev.length - 1)
+            : activeWord.substring(0, prev.length + 1)
+        );
+      }, delay);
+    }
+
+    return () => clearTimeout(timer);
+  }, [currentText, isDeleting, currentWordIndex]);
+
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setCursorVisible((v) => !v);
+    }, 450);
+    return () => clearInterval(interval);
+  }, []);
+
   // Logo items
   const brandLogos = [
     { name: "Castrol", sub: "Lubricants" },
@@ -60,7 +99,13 @@ export default function Hero() {
               DRIVEN BY <br className="hidden sm:block" />
               <span className="text-zinc-950">EXPERTISE.</span>
               <br />
-              <span className="text-orange-500 block mt-1">POWERED BY TRUST.</span>
+              <span className="text-orange-500 block mt-1 min-h-[1.15em]">
+                POWERED BY{" "}
+                <span className="inline-block relative">
+                  {currentText}
+                  <span className={`${cursorVisible ? "opacity-100" : "opacity-0"} text-orange-500 font-light ml-0.5`}>|</span>
+                </span>
+              </span>
             </motion.h1>
 
             <motion.p
