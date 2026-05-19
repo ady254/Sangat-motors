@@ -60,14 +60,13 @@ export default function Footer() {
               </div>
             </a>
             <p className="text-xs text-zinc-500 leading-relaxed max-w-sm">
-              Your trusted partner for premium car care and performance in Ludhiana. We combine advanced mechanical technology with skilled expertise to keep your vehicle running at its best.
+              Your trusted partner for premium car care and performance in Patna bihar. We combine advanced mechanical technology with skilled expertise to keep your vehicle running at its best.
             </p>
             <div className="flex gap-3">
               {[
-                { Icon: FacebookIcon, href: "#" },
-                { Icon: TwitterIcon, href: "#" },
-                { Icon: InstagramIcon, href: "#" },
-                { Icon: YoutubeIcon, href: "#" },
+
+                { Icon: InstagramIcon, href: "https://www.instagram.com/sangatmotor?igsh=cnZ2b2VzandubnR2" },
+
               ].map(({ Icon, href }, idx) => (
                 <a
                   key={idx}
