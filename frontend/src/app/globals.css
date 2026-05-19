@@ -1,0 +1,56 @@
+@import "tailwindcss";
+
+@theme {
+  --color-background: #f4f4f3;
+  --color-foreground: #111111;
+  --font-sans: var(--font-geist-sans), ui-sans-serif, system-ui;
+  --font-mono: var(--font-geist-mono), monospace;
+}
+
+:root {
+  --background: #f4f4f3;
+  --foreground: #111111;
+}
+
+/* Global resets and smooth scrolling defaults */
+html {
+  scroll-behavior: smooth;
+  background-color: #f4f4f3;
+  color: #111111;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+body {
+  background-color: #f4f4f3;
+  color: #111111;
+  overflow-x: hidden;
+}
+
+/* Premium Scrollbar Styling - Light Theme */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: #f4f4f3;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #d4d4d2;
+  border-radius: 4px;
+  border: 2px solid #f4f4f3;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #ff5a1f;
+}
+
+/* Form inputs styling reset */
+select {
+  background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' fill='none' viewBox='0 0 20 20'%3e%3cpath stroke='%234b5563' stroke-linecap='round' stroke-linejoin='round' stroke-width='1.5' d='M6 8l4 4 4-4'/%3e%3c/svg%3e");
+  background-position: right 0.75rem center;
+  background-repeat: no-repeat;
+  background-size: 1.25em 1.25em;
+  padding-right: 2.5rem;
+}
