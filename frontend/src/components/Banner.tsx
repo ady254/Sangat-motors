@@ -2,6 +2,7 @@
 
 import { motion } from "framer-motion";
 import { Users, Cpu, ShieldCheck, Heart } from "lucide-react";
+import ScrollReveal from "./ScrollReveal";
 
 export default function Banner() {
   const benefits = [
@@ -33,19 +34,21 @@ export default function Banner() {
       <div className="absolute inset-0 opacity-[0.02] bg-[radial-gradient(#fff_1px,transparent_1px)] [background-size:16px_16px] pointer-events-none" />
 
       <div className="max-w-7xl mx-auto px-6 md:px-12 relative z-10">
-        <div className="text-center max-w-3xl mx-auto mb-16 space-y-4">
-          <span className="text-[10px] font-mono tracking-widest text-orange-500 uppercase">
-            ABOUT SANGAT MOTOR CENTRE
-          </span>
-          <h2 className="text-2xl sm:text-3xl md:text-4xl font-extrabold text-white tracking-tight uppercase leading-tight">
-            WELCOME TO SANGAT MOTOR CENTRE <br className="hidden md:block" />
-            <span className="text-orange-500">WHERE QUALITY MEETS PERFORMANCE</span>
-          </h2>
-          <div className="w-16 h-1 bg-orange-600 mx-auto my-4 rounded" />
-          <p className="text-zinc-400 text-xs sm:text-sm leading-relaxed max-w-2xl mx-auto uppercase tracking-wide">
-            We are passionate about cars and committed to delivering unmatched service quality. From regular servicing to complete car care, we ensure your ride stays smooth, safe, and reliable. Because your trust drives us forward.
-          </p>
-        </div>
+        <ScrollReveal direction="up" delay={0.1}>
+          <div className="text-center max-w-3xl mx-auto mb-16 space-y-4">
+            <span className="text-[10px] font-mono tracking-widest text-orange-500 uppercase">
+              ABOUT SANGAT MOTOR CENTRE
+            </span>
+            <h2 className="text-2xl sm:text-3xl md:text-4xl font-extrabold text-white tracking-tight uppercase leading-tight">
+              WELCOME TO SANGAT MOTOR CENTRE <br className="hidden md:block" />
+              <span className="text-orange-500">WHERE QUALITY MEETS PERFORMANCE</span>
+            </h2>
+            <div className="w-16 h-1 bg-orange-600 mx-auto my-4 rounded" />
+            <p className="text-zinc-400 text-xs sm:text-sm leading-relaxed max-w-2xl mx-auto uppercase tracking-wide">
+              We are passionate about cars and committed to delivering unmatched service quality. From regular servicing to complete car care, we ensure your ride stays smooth, safe, and reliable. Because your trust drives us forward.
+            </p>
+          </div>
+        </ScrollReveal>
 
         {/* Benefits Grid */}
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
