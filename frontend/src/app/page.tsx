@@ -1,6 +1,7 @@
 import Navbar from "@/components/Navbar";
 import Hero from "@/components/Hero";
 import About from "@/components/About";
+import TextScroll from "@/components/TextScroll";
 import Banner from "@/components/Banner";
 import PromoGallery from "@/components/PromoGallery";
 import Services from "@/components/Services";
@@ -50,6 +51,13 @@ export default function Home() {
 
           {/* About Us (Who We Are / What We Do) */}
           <About />
+
+          {/* Scroll-synced Text Reveal Section */}
+          <TextScroll
+            text={`WE ARE PASSIONATE ABOUT CARS AND COMMITTED TO DELIVERING UNMATCHED SERVICE QUALITY.\nFROM REGULAR SERVICING TO COMPLETE CAR CARE, WE ENSURE YOUR RIDE STAYS SMOOTH, SAFE, AND RELIABLE.\nBECAUSE YOUR TRUST DRIVES US FORWARD.`}
+            unit="Words"
+            sectionHeightVh={220}
+          />
 
           {/* Value Proposition Benefits Banner */}
           <Banner />
